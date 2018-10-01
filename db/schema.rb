@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_01_170456) do
+ActiveRecord::Schema.define(version: 2018_10_01_183345) do
 
   create_table "listings", force: :cascade do |t|
     t.integer "sitter_id"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2018_10_01_170456) do
     t.boolean "child_friendly", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
