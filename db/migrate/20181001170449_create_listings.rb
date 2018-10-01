@@ -6,7 +6,7 @@ class CreateListings < ActiveRecord::Migration[5.2]
       t.date :start_date
       t.text :description
       t.integer :price
-      t.boolean :pending_status
+      t.boolean :available, :default => true 
       t.timestamps
     end
   end

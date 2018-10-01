@@ -4,9 +4,9 @@ class CreatePets < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :species
       t.text :description
-      t.boolean :cat_friendly
-      t.boolean :dog_friendly
-      t.boolean :child_friendly
+      t.boolean :cat_friendly, :default => true
+      t.boolean :dog_friendly, :default => true
+      t.boolean :child_friendly, :default => true 
       t.timestamps
     end
   end

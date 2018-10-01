@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2018_10_01_170456) do
     t.date "start_date"
     t.text "description"
     t.integer "price"
-    t.boolean "pending_status"
+    t.boolean "available", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 2018_10_01_170456) do
     t.string "name"
     t.string "species"
     t.text "description"
-    t.boolean "cat_friendly"
-    t.boolean "dog_friendly"
-    t.boolean "child_friendly"
+    t.boolean "cat_friendly", default: true
+    t.boolean "dog_friendly", default: true
+    t.boolean "child_friendly", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2018_10_01_170456) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.text "bio"
-    t.boolean "has_children"
+    t.boolean "has_children", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
