@@ -1,0 +1,36 @@
+
+<h1>Create a User</h1>
+
+<%= form_for @user do |f|%>
+  <%=f.label :name%><br>
+  <%=f.text_field :name%><br>
+
+  <%=f.label :bio%><br>
+  <%=f.text_field :bio%><br>
+
+<h3>Pet Info:</h3>
+    <%= f.fields_for :pets do |pet|%>
+      <%= pet.label :name%>
+      <%= pet.text_field :name%><br>
+
+      <%= pet.label :species%>
+      <%= pet.text_field :species%><br>
+
+      <%= pet.label :description%>
+      <%= pet.text_field :description%><br>
+
+      <%=pet.label "Dog Friendly"%>
+      <%=pet.check_box :dog_friendly%><br>
+
+      <%=pet.label "Cat Friendly"%>
+      <%=pet.check_box :cat_friendly%><br>
+
+      <%=pet.label "Child Friendly"%>
+      <%=pet.check_box :child_friendly%><br>
+
+
+      <%end%>
+
+  <%=f.submit%>
+
+  <%end%>

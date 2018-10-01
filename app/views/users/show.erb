@@ -1,0 +1,18 @@
+<h1><%=@user.name%></h1>
+
+<h3><%=@user.bio%></h3>
+<ul>
+
+<h3><%@user.pets.each do |pet|%></h3>
+    <li>
+    <%=pet.name%><br>
+    <%=pet.description%>
+    </li>
+
+    <div class="">
+      
+    </div>
+
+  <%end%>
+
+  </ul>
