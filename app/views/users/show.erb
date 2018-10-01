@@ -1,18 +1,20 @@
-<h1><%=@user.name%></h1>
+<h1><%=@user.name.titleize%></h1>
 
-<h3><%=@user.bio%></h3>
+<h3><%=@user.bio.humanize%></h3>
 <ul>
 
 <h3><%@user.pets.each do |pet|%></h3>
     <li>
-    <%=pet.name%><br>
-    <%=pet.description%>
+    <h4><%=pet.name%></h4>
+    Description: <%=pet.description.humanize%>
+    <ul>
+      <li>Good with kids: <%=pet.child_friendly%></li>
+      <li>Good with dogs: <%=pet.dog_friendly%></li>
+      <li>Good with cats: <%=pet.cat_friendly%></li>
+    </ul>
     </li>
-
-    <div class="">
-      
-    </div>
-
   <%end%>
-
   </ul>
+
+<%= link_to "Edit User" %>
+<%= link_to "Return to Homepage" %>
