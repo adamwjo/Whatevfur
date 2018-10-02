@@ -5,7 +5,7 @@
 
 <h3><%@user.pets.each do |pet|%></h3>
     <li>
-    <h4><%=pet.name%></h4>
+    <h4><%=pet.name%> - <%= pet.species %> </h4>
     Description: <%=pet.description.humanize%>
     <ul>
       <li>Good with kids: <%=pet.child_friendly%></li>
@@ -16,5 +16,5 @@
   <%end%>
   </ul>
 
-<%= link_to "Edit User" %>
-<%= link_to "Return to Homepage" %>
+<%= link_to "Edit User", edit_user_path(@user) %>
+<%= link_to "Return to Homepage", listings_path %>
