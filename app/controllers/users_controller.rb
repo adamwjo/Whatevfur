@@ -26,6 +26,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :bio, pets_attributes: [:name, :species, :description, :dog_friendly])
+    params.require(:user).permit(:name, :bio, pets_attributes: [:id, :name, :species, :description, :dog_friendly, :cat_friendly, :child_friendly])
   end
 end
