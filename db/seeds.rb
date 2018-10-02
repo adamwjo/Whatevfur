@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Pet.destroy_all
 User.destroy_all
+Listing.destroy_all
 
 user1 = User.create(name: "Barack", bio: "a retired statesman")
 user2 = User.create(name: "Ace Ventura", bio: "pet detective")
@@ -14,3 +15,6 @@ user2 = User.create(name: "Ace Ventura", bio: "pet detective")
 pet1 = Pet.create( name: "Rex", species: "Cat", description: "a cool cat", user_id: user1.id)
 pet2 = Pet.create( name: "Snoopy", species: "Dog", description: "A sleepy dog", user_id: user1.id)
 pet3 = Pet.create( name: "Scooby Doo", species: "Dog", description: "a chill dog", user_id: user2.id)
+
+
+listing1 = Listing.create(client_id: user2.id, start_date: 2015-12-08, description: "I have a crazy cat", price: 100)

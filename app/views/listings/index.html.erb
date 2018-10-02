@@ -1,6 +1,9 @@
-<h1>Listings#index</h1>
-<p>Find me in app/views/listings/index.html.erb</p>
+<h1>Listings</h1>
 
-<% @listings.each do |listing| %>
-  <%= listing.description %>
+
+<% @listings.available_listings.each do |listing| %><br>
+  Client: <%= link_to listing.client.name%><br>
+  Description: <%=listing.description%><br>
+  Price: $<%=listing.price%><br>
+  <%= link_to "More info", listing_path(listing)%>
 <% end %>

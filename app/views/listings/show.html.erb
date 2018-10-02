@@ -1,2 +1,15 @@
-<h1>Listings#show</h1>
-<p>Find me in app/views/listings/show.html.erb</p>
+<h1>Listing</h1>
+
+ 
+
+
+  <%=@listing.description%>
+
+  <%=@listing.price%>
+
+
+
+
+<%@listing.client.pets.each do |pet|%>
+<%=pet.name%>
+<%end%>
