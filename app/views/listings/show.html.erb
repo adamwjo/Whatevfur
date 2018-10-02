@@ -1,15 +1,19 @@
 <h1>Listing</h1>
-
- 
-
-
-  <%=@listing.description%>
-
-  <%=@listing.price%>
-
-
-
-
+<br>
+<%= link_to @listing.client.name, user_path(@listing.client) %>
+<br>
+<%=@listing.description%>
+<br>
 <%@listing.client.pets.each do |pet|%>
-<%=pet.name%>
+  <%=pet.name%> - <%= pet.species %>
+Description: <%=pet.description.humanize%>
+<ul>
+  <li>Good with kids: <%=pet.child_friendly%></li>
+  <li>Good with dogs: <%=pet.dog_friendly%></li>
+  <li>Good with cats: <%=pet.cat_friendly%></li>
+</ul>
+</li>
 <%end%>
+
+<%=@listing.price%>
+<%= link_to "Apply for this Listing", listings_path %>

@@ -4,9 +4,14 @@ class ListingsController < ApplicationController
   end
 
   def new
+    @listing = Listing.new
   end
 
   def create
+    @listing = Listing.new(listing_params)
+    #needs client ID to persist in DB
+    @listing.save
+    
   end
 
   def show

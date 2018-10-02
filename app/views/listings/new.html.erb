@@ -1,2 +1,11 @@
-<h1>Listings#new</h1>
-<p>Find me in app/views/listings/new.html.erb</p>
+<h1>Create a new Listing</h1>
+<%= form_for @listing do |f| %>
+  <%= f.label "Enter a description of your pet's needs" %>
+  <%= f.text_field :description %>
+  <br>
+  <%= f.label "Enter the price you are willing to pay" %>
+  <%= f.number_field :price %>
+  <br>
+  ### import client's pets from session
+  <%= f.submit %>
+<% end %>
