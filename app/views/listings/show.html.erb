@@ -16,4 +16,10 @@ Description: <%=pet.description.humanize%>
 <%end%>
 
 <%=@listing.price%>
-<%= link_to "Apply for this Listing", listings_path %>
+
+Conditional button:
+<% if session[:user_id] == @listing.client_id %>
+  <%= link_to "Edit this listing", edit_listing_path %>
+<% else %>
+  <%= link_to "Apply for this Listing", "/sitter_button/#{@listing.id}" %>
+<% end %>

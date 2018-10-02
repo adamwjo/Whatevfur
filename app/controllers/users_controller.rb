@@ -7,6 +7,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    session[:user_id] = @user.id
+    redirect_to @user
   end
 
   def show
@@ -26,6 +28,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :bio, pets_attributes: [:id, :name, :species, :description, :dog_friendly, :cat_friendly, :child_friendly])
+    params.require(:user).permit(:username, :name, :bio, pets_attributes: [:id, :name, :species, :description, :dog_friendly, :cat_friendly, :child_friendly])
   end
 end

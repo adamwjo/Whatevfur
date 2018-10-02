@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_01_183345) do
+ActiveRecord::Schema.define(version: 2018_10_02_203453) do
 
   create_table "listings", force: :cascade do |t|
     t.integer "sitter_id"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2018_10_01_183345) do
     t.boolean "has_children", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
   end
 
 end
