@@ -25,19 +25,26 @@ class UsersController < ApplicationController
       render :show
   end
 
-  def newpet
+  def newpet #BROKEN
     @user = User.find(params[:id])
     # @user.pets.build
     # render :newpet
   end
 
-  def addpet
+  def addpet #BROKEN
 
     @user = User.find(current_user.id)
     # byebug
     @user.update(user_params)
       redirect_to user_path
   end
+
+  def my_listings
+    @user = User.find(params[:id])
+    @listings = @user.client_listings
+    render "users/listings"
+  end
+
 
   private
 

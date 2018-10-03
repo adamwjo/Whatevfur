@@ -8,14 +8,17 @@
         </div>
         <ul class="nav navbar-nav">
           <li class="active"><a href="/">Home</a></li>
-          <li><a href="#">Page 1</a></li>
-          <li><a href="#">Page 2</a></li>
+          <%if !session[:user_id]%>   <!-- if not logged in  -->
+          <%else%>  <!-- user is logged in -->
+          <li><a href="/listings/new">Create New Listing</a></li>
+          <li><a href="/user/<%=current_user.id%>/listings">My Listings</a></li>
+          <%end%>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <%if !session[:user_id]%>
+          <%if !session[:user_id]%>   <!-- if not logged in  -->
           <li><a href="/users/new"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
           <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          <%else%>
+          <%else%>  <!-- user is logged in -->
           <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
           <li><a href="/users/<%=current_user.id%>"><span class="glyphicon glyphicon-user"></span> <%=current_user.name%></a></li>
           <%end%>

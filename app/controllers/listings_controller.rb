@@ -19,12 +19,37 @@ class ListingsController < ApplicationController
   end
 
   def sitter_button
-    
+
     @listing = Listing.find(params[:id])
     @listing.sitter_id = session[:user_id]
     @listing.save
     redirect_to listings_path
   end
+
+  def destroy
+    @listing = Listing.find(params[:id])
+    @listing.destroy
+    redirect_to listings_path
+  end
+
+  def dog_friendly
+    @listings = Listing.available_listings.select do |list|
+      list.dog_friendly?
+    end
+  end
+
+  def cat_friendly
+    @listings = Listing.available_listings.select do |list|
+      list.cat_friendly?
+    end
+  end
+
+  def kid_friendly
+    @listings = Listing.available_listings.select do |list|
+      list.child_friendly?
+    end
+  end
+
 
   private
 

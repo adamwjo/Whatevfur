@@ -1,0 +1,11 @@
+<h1>Cat Friendly Listings</h1>
+
+
+<% @listings.each do |listing| %><br>
+<p>
+  Client: <%= link_to listing.client.name, user_path(listing.client)%><br>
+  Description: <%=listing.description%><br>
+  Price: $<%=listing.price%><br>
+  <%= link_to "More info", listing_path(listing)%>
+</p>
+<% end %>
