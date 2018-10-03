@@ -2,7 +2,7 @@
 
 # General
 
-* Make landing page '/' the listings index
+
 * Make banner for all pages which conditionally displays "welcome #{user}" or login button
 
 

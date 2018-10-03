@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :listings, only: [:new, :create, :show, :edit, :update, :index]
   resources :users, only: [:new, :create, :show, :edit, :update]
+  get "/", to: 'listings#index'
   get "/login", to: 'sessions#new'
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
