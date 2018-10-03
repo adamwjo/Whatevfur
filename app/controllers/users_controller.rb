@@ -26,14 +26,15 @@ class UsersController < ApplicationController
   end
 
   def newpet
-    @user = User.find(current_user.id)
-    @user.pets.build
+    @user = User.find(params[:id])
+    # @user.pets.build
     # render :newpet
   end
 
   def addpet
-    # @user = User.find(params[:id])
-    @user = User.find(current_user[:id])
+
+    @user = User.find(current_user.id)
+    # byebug
     @user.update(user_params)
       redirect_to user_path
   end
@@ -42,5 +43,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :name, :bio, pets_attributes: [:id, :name, :species, :description, :dog_friendly, :cat_friendly, :child_friendly])
+  end
+
+  def pet_params
+
   end
 end

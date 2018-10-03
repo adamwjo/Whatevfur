@@ -15,7 +15,7 @@
       <%= pet.text_field :name%><br>
 
       <%= pet.label :species%>
-      <%= pet.text_field :species%><br>
+      <%= pet.select :species, [["cat", "cat"], ["dog", "dog"]] %><br>
 
       <%= pet.label :description%>
       <%= pet.text_field :description%><br>

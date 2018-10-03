@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get "/sitter_button/:id", to: "listings#sitter_button"
   get "users/:id/newpet", to: "users#newpet"
-  post "users/:id/newpet", to: "users#addpet"
+  post "users/:id/addpet", to: "users#addpet"
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

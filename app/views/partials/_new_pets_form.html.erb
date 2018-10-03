@@ -1,12 +1,13 @@
-<%= form_tag ('/users/<%=current_user.id%>/addpet') do %>
+<%= form_tag "/users/#{@user.id}/addpet" do %>
+
 <label>Pet Name:</label>
-<%= text_field_tag :'current_user[:pets_attributes][:name]'%><br>
+<%= text_field_tag :'user[pets_attributes][name]'%><br>
 
 <label>Pet Species:</label>
-<%= text_field_tag :'current_user[:pets_attributes][:species]'%><br>
+<%= text_field_tag :'user[pets_attributes][species]'%><br>
 
 <label>Pet Description:</label>
-<%= text_field_tag :'current_user[:pets_attributes][:description]'%><br>
+<%= text_field_tag :'user[pets_attributes][description]'%><br>
 
 <%= submit_tag "Add Pet"%>
 <%end%>
