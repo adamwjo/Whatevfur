@@ -25,6 +25,19 @@ class UsersController < ApplicationController
       render :show
   end
 
+  def newpet
+    @user = User.find(current_user.id)
+    @user.pets.build
+    # render :newpet
+  end
+
+  def addpet
+    # @user = User.find(params[:id])
+    @user = User.find(current_user[:id])
+    @user.update(user_params)
+      redirect_to user_path
+  end
+
   private
 
   def user_params
