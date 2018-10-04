@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :pets, only: [:new, :create]
+  resources :pets, only: [:new, :create, :destroy]
   resources :listings
   resources :users, only: [:new, :create, :show, :edit, :update]
   get "/", to: 'listings#index'
