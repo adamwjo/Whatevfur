@@ -38,9 +38,9 @@ h1 {
 
 h4.filters {color: aliceblue;}
 
-label {
-  color: green
-}
+// label {
+//   color: green
+// }
 
 span.show_page {
   background-color: #f8f9f8
@@ -52,12 +52,13 @@ div.notice {
 div.show_page {
   height: 50%;
   width: 50%;
-  background-color: powderblue;
+  background-color: #f8f9f8;
+  padding: 10px;
 
 }
 
 div.create_list{
-  height: 50%;
-  width: 50%;
-  background-color: powderblue;
+  background-color: #ddd;
+  padding-left: 50px;
+  margin-left: 5%
 }

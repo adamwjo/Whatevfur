@@ -3,7 +3,10 @@
 <div class="show_page">
 
   <div class="">
+    <h5>
+
     Request from: <%= link_to @listing.client.name, user_path(@listing.client) %>
+  </h5>
   </div>
   <br>
   <div class="">
@@ -11,7 +14,7 @@
   <%=@listing.description%>
   </div>
 
-  <%=@listing.start_date%>
+  Start date: <%=@listing.start_date%>
 
   <br>
   <div class="">
