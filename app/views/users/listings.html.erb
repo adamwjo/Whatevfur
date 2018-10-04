@@ -1,11 +1,4 @@
 <h1><%=@user.name%>'s Listings</h1>
 
 
-<% @listings.each do |listing| %><br>
-<p>
-  Client: <%= link_to listing.client.name, user_path(listing.client)%><br>
-  Description: <%=listing.description%><br>
-  Price: $<%=listing.price%><br>
-  <%= link_to "More info", listing_path(listing)%>
-</p>
-<% end %>
+<%= render "partials/listings" %>

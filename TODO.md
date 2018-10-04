@@ -1,16 +1,21 @@
 ### TO DO ###
 
-# Genera
+# General
 
 
 # Listings
 
-* Index should have sort function i.e. "only dog_friendly"
+* Sorted listings need a link either on navbar or index page
 
 
 # User
 
-* Edit page should let you add/remove pets
+* Edit page should let you add/remove pets (!)
+
 * New page should let you add more than one pet
 
-* should see my listings on navbar
+
+# Stylings
+
+  * put show page in box
+  * put new listing form in box

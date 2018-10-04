@@ -1,5 +1,6 @@
 <h1><%=@user.name.titleize%></h1>
 
+<div class="show_page">
 <h3><%=@user.bio.humanize%></h3>
 <ul>
 
@@ -20,3 +21,4 @@
 <br>
 <%= link_to "Return to Homepage", listings_path %>
 <br>
+</div>

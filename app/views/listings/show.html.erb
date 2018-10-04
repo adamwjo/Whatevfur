@@ -1,38 +1,42 @@
 <h1>Listing</h1>
 <br>
-<div class="">
-  Request from: <%= link_to @listing.client.name, user_path(@listing.client) %>
-</div>
-<br>
-<div class="">
-  Description:
-<%=@listing.description%>
-</div>
-<br>
-<div class="">
-  Pets at this household: <br>
-<%@listing.client.pets.each do |pet|%>
-  <%=pet.name%> - <%= pet.species %>
-Description: <%=pet.description.humanize%>
-<ul>
-  <li>Good with kids: <%=pet.child_friendly%></li>
-  <li>Good with dogs: <%=pet.dog_friendly%></li>
-  <li>Good with cats: <%=pet.cat_friendly%></li>
-</ul>
-</li>
-<%end%>
-</div>
+<div class="show_page">
+    
+  <div class="">
+    Request from: <%= link_to @listing.client.name, user_path(@listing.client) %>
+  </div>
+  <br>
+  <div class="">
+    Description:
+  <%=@listing.description%>
+  </div>
+  <br>
+  <div class="">
+    Pets at this household: <br>
+  <%@listing.client.pets.each do |pet|%>
+    <%=pet.name%> - <%= pet.species %>
+  Description: <%=pet.description.humanize%>
+  <ul>
+    <li>Good with kids: <%=pet.child_friendly%></li>
+    <li>Good with dogs: <%=pet.dog_friendly%></li>
+    <li>Good with cats: <%=pet.cat_friendly%></li>
+  </ul>
+  </li>
+  <%end%>
+  </div>
 
-<div class="">
-  Compensation: $<%=@listing.price%>
+  <div class="">
+    Compensation: $<%=@listing.price%>
+  </div>
+  <br>
+  <br>
+  <% if session[:user_id] == @listing.client_id %>
+    <%= link_to "Edit this listing", edit_listing_path %>
+    <%= form_tag @listing, method: "DELETE" do %>
+      <%= submit_tag "Delete this listing" %>
+  <% end %>
+  <% else %>
+    <%= link_to "Apply for this Listing", "/sitter_button/#{@listing.id}" %>
+  <% end %>
+
 </div>
-<br>
-<br>
-<% if session[:user_id] == @listing.client_id %>
-  <%= link_to "Edit this listing", edit_listing_path %>
-  <%= form_tag @listing, method: "DELETE" do %>
-    <%= submit_tag "Delete this listing" %>
-<% end %>
-<% else %>
-  <%= link_to "Apply for this Listing", "/sitter_button/#{@listing.id}" %>
-<% end %>

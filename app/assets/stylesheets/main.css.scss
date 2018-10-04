@@ -13,5 +13,24 @@ section {
 }
 
 body {
-  background-image: image-url('/assets/Funny-Dog-Pics.jpg'); 
+  background-image: image-url('/assets/Funny-Dog-Pics.jpg');
+}
+
+li.list-group-item.active,  {
+  background-color: #ddd;
+}
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    z-index: 2;
+    color: #000000;
+    background-color: #f8f9f8;
+  }
+
+h1 {
+  font-size: 36px;
+  color: aliceblue;
+}
+
+div.show_page {
+  background-color: #f8f9f8;
 }
