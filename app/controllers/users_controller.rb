@@ -42,8 +42,10 @@ class UsersController < ApplicationController
   def my_listings
     @user = User.find(params[:id])
     @listings = @user.client_listings
+    @gigs = @user.sitter_listings
     render "users/listings"
   end
+
 
 
   private

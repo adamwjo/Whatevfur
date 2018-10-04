@@ -14,9 +14,12 @@
       <li>Good with dogs: <%=pet.dog_friendly%></li>
       <li>Good with cats: <%=pet.cat_friendly%></li>
     </ul>
+    <%if session[:user_id] == @user.id %>
     <%= form_tag @pet, method: "DELETE" do %>
     <%= submit_tag "Remove Pet" %>
     <% end %>
+    
+    <%end%>
     </li>
   <%end%>
   </ul>

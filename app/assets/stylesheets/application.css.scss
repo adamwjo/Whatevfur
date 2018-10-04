@@ -15,3 +15,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "main";
+@font-face {
+  font-family: 'Nokia Pure Headline';
+  src: url('/assets/nokiapureheadlinerg-webfont.eot');
+  src: url('/assets/nokiapureheadlinerg-webfont.eot?iefix') format('eot'),
+  url('/assets/nokiapureheadlinerg-webfont.woff') format('woff'),
+  url('/assets/nokiapureheadlinerg-webfont.ttf') format('truetype'),
+  url('/assets/nokiapureheadlinerg-webfont.svg#webfont3AwWkQXK') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

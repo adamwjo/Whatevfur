@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   def index
-    @listings = Listing.all
+    @listings = Listing.available_listings
   end
 
   def new
@@ -36,7 +36,7 @@ class ListingsController < ApplicationController
   def sitter_button
 
     @listing = Listing.find(params[:id])
-    @listing.sitter_id = session[:user_id]
+    @listing.sitter_id = current_user.id
     @listing.save
     redirect_to listings_path
   end

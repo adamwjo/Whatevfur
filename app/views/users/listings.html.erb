@@ -5,3 +5,19 @@
 
 
 <%= render "partials/listings" %>
+
+<h1>GIgs</h1>
+
+<%@gigs.each do |gig| %>
+<ul class="list-group list-inline">
+  <li class="list-group-item active">
+
+  Client: <%= link_to gig.client.name, user_path(gig.client)%><br>
+  Description: <%=gig.description%><br>
+  Price: $<%=gig.price%><br>
+  Start Date: <%=gig.start_date%><br>
+  <%= link_to "More info", listing_path(gig)%>
+
+</li>
+</ul>
+<% end %>
