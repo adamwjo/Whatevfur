@@ -16,6 +16,7 @@ body {
   background-image: image-url('/assets/Funny-Dog-Pics.jpg');
 }
 
+
 li.list-group-item.active,  {
   background-color: #ddd;
   padding-left: 50px;
@@ -33,6 +34,10 @@ li.list-group-item.active,  {
 h1 {
   font-size: 36px;
   color: aliceblue;
+}
+
+label {
+  color: green 
 }
 
 span.show_page {
