@@ -23,6 +23,16 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
   end
 
+  def edit
+    @listing = Listing.find(params[:id])
+  end
+
+  def update
+    @listing = Listing.find(params[:id])
+    @listing.update(listing_params)
+      render :show
+  end
+
   def sitter_button
 
     @listing = Listing.find(params[:id])
