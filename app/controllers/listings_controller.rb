@@ -10,8 +10,13 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     @listing.client_id = session[:user_id]
-    @listing.save
-    redirect_to listings_path
+    if @listing.valid?
+      @listing.save
+      redirect_to listings_path
+    else
+      flash[:notice] = "Date cannot be in the past"
+      render :new
+    end
   end
 
   def show

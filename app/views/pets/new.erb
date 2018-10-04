@@ -1,0 +1,27 @@
+New pets Page
+
+
+
+
+<%= form_for @pet do |pet|%>
+<%= pet.label :name%>
+<%= pet.text_field :name%><br>
+
+<%= pet.label :species%>
+<%= pet.select :species, [["cat", "cat"], ["dog", "dog"]] %><br>
+
+<%= pet.label :description%>
+<%= pet.text_field :description%><br>
+
+<%=pet.label "Dog Friendly"%>
+<%=pet.check_box :dog_friendly%><br>
+
+<%=pet.label "Cat Friendly"%>
+<%=pet.check_box :cat_friendly%><br>
+
+<%=pet.label "Child Friendly"%>
+<%=pet.check_box :child_friendly%><br>
+
+<%=pet.submit :class=>"btn btn-success"%>
+
+<%end%>

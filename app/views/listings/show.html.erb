@@ -1,7 +1,7 @@
 <h1>Listing</h1>
 <br>
 <div class="show_page">
-    
+
   <div class="">
     Request from: <%= link_to @listing.client.name, user_path(@listing.client) %>
   </div>
@@ -10,6 +10,9 @@
     Description:
   <%=@listing.description%>
   </div>
+
+  <%=@listing.start_date%>
+
   <br>
   <div class="">
     Pets at this household: <br>

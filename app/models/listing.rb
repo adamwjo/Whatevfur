@@ -1,6 +1,16 @@
 class Listing < ApplicationRecord
   belongs_to :sitter, :class_name => "User", optional: true
   belongs_to :client, :class_name => "User"
+  validates :start_date, presence: true
+  validate :start_date_cannot_be_in_the_past
+
+
+  def start_date_cannot_be_in_the_past
+    if start_date.present? && start_date < Date.today
+      errors.add(:expiration_date, "can't be in the past")
+    end
+  end
+
 
   def self.available_listings
     Listing.all.select do |listing|
