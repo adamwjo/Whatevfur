@@ -2,10 +2,11 @@
 <div class="create_list">
 
 <% if flash[:notice] %>
-   <div class="notice"><%= flash[:notice] %></div>
+   <div class="notice"><%= flash[:notice] %>
  <% end %>
+</div>
 
-<%= form_for @listing do |f| %>
+<%= form_for @listing, :html => {:class => "form-horizontal center"} do |f| %>
   <%= f.label "Enter a description of your pet's needs" %>
   <%= f.text_area :description %>
   <br>
@@ -15,7 +16,7 @@
   <%= f.number_field :price %>
   <br>
 
-  <%= f.submit %>
+  <%= f.submit class: "btn btn-default btn-primary" %>
 <% end %>
 
 </div>

@@ -1,7 +1,7 @@
 <h1><%=@user.name.titleize%></h1>
 
 <div class="container-fluid">
-<h3>User bio: <%=@user.bio.humanize%></h3>
+<h3 class="userbio">User bio: <%=@user.bio.humanize%></h3>
 <ul>
 
 <h3><%@user.pets.each do |pet|%></h3>
@@ -16,9 +16,9 @@
     </ul>
     <%if session[:user_id] == @user.id %>
     <%= form_tag @pet, method: "DELETE" do %>
-    <%= submit_tag "Remove Pet" %>
+    <%= submit_tag  "Remove Pet" %>
     <% end %>
-    
+
     <%end%>
     </li>
   <%end%>
